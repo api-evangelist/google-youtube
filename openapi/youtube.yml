@@ -1,0 +1,453 @@
+openapi: 3.1.0
+info:
+  title: YouTube Data API
+  description: >-
+    The YouTube Data API v3 lets you incorporate YouTube functionality into your
+    own application. You can use the API to fetch search results, retrieve and
+    manage video resources, manage channels and playlists, and access
+    subscription and activity data.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/youtube/v3
+servers:
+  - url: https://youtube.googleapis.com/youtube/v3
+paths:
+  /videos:
+    get:
+      operationId: listVideos
+      summary: List videos
+      description: Returns a list of videos that match the API request parameters.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+          description: >-
+            The part parameter specifies a comma-separated list of one or more
+            video resource properties.
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: The id parameter specifies a comma-separated list of YouTube video IDs.
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+            default: 5
+            maximum: 50
+          description: The maximum number of items to return.
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+          description: Identifies a specific page in the result set.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoListResponse'
+  /channels:
+    get:
+      operationId: listChannels
+      summary: List channels
+      description: Returns a collection of zero or more channel resources.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: query
+          schema:
+            type: string
+        - name: mine
+          in: query
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChannelListResponse'
+  /playlists:
+    get:
+      operationId: listPlaylists
+      summary: List playlists
+      description: Returns a collection of playlists.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: channelId
+          in: query
+          schema:
+            type: string
+        - name: mine
+          in: query
+          schema:
+            type: boolean
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+            default: 5
+            maximum: 50
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaylistListResponse'
+    post:
+      operationId: insertPlaylist
+      summary: Create a playlist
+      description: Creates a new playlist.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Playlist'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playlist'
+  /playlistItems:
+    get:
+      operationId: listPlaylistItems
+      summary: List playlist items
+      description: Returns a collection of playlist items.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: playlistId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+            default: 5
+            maximum: 50
+      responses:
+        '200':
+          description: Successful response
+  /search:
+    get:
+      operationId: search
+      summary: Search for content
+      description: Returns a collection of search results that match the query parameters.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: q
+          in: query
+          schema:
+            type: string
+          description: The search query term.
+        - name: type
+          in: query
+          schema:
+            type: string
+          description: Restricts a search to a particular type of resource.
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+            default: 5
+            maximum: 50
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchListResponse'
+  /subscriptions:
+    get:
+      operationId: listSubscriptions
+      summary: List subscriptions
+      description: Returns subscription resources.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: mine
+          in: query
+          schema:
+            type: boolean
+        - name: channelId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /commentThreads:
+    get:
+      operationId: listCommentThreads
+      summary: List comment threads
+      description: Returns a list of comment threads.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: videoId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /activities:
+    get:
+      operationId: listActivities
+      summary: List activities
+      description: Returns a list of channel activity events.
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: channelId
+          in: query
+          schema:
+            type: string
+        - name: mine
+          in: query
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Successful response
+components:
+  schemas:
+    Video:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        snippet:
+          $ref: '#/components/schemas/VideoSnippet'
+        contentDetails:
+          type: object
+        statistics:
+          type: object
+          properties:
+            viewCount:
+              type: string
+            likeCount:
+              type: string
+            commentCount:
+              type: string
+        status:
+          type: object
+    VideoSnippet:
+      type: object
+      properties:
+        publishedAt:
+          type: string
+          format: date-time
+        channelId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        thumbnails:
+          type: object
+        channelTitle:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        categoryId:
+          type: string
+    VideoListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        prevPageToken:
+          type: string
+        pageInfo:
+          type: object
+          properties:
+            totalResults:
+              type: integer
+            resultsPerPage:
+              type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Video'
+    Channel:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        snippet:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            publishedAt:
+              type: string
+              format: date-time
+        statistics:
+          type: object
+          properties:
+            viewCount:
+              type: string
+            subscriberCount:
+              type: string
+            videoCount:
+              type: string
+    ChannelListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
+    Playlist:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        snippet:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            channelId:
+              type: string
+    PlaylistListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Playlist'
+    SearchResult:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: object
+          properties:
+            kind:
+              type: string
+            videoId:
+              type: string
+            channelId:
+              type: string
+            playlistId:
+              type: string
+        snippet:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            publishedAt:
+              type: string
+              format: date-time
+            channelTitle:
+              type: string
+    SearchListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResult'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/youtube: Manage your YouTube account
+            https://www.googleapis.com/auth/youtube.readonly: View your YouTube account
+            https://www.googleapis.com/auth/youtube.upload: Upload YouTube videos
+    apiKey:
+      type: apiKey
+      in: query
+      name: key
+security:
+  - oauth2: []
+  - apiKey: []

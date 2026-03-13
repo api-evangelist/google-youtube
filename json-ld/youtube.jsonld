@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "youtube": "https://www.googleapis.com/youtube/v3/",
+    "Video": "youtube:Video",
+    "Channel": "youtube:Channel",
+    "Playlist": "youtube:Playlist",
+    "videoId": {
+      "@id": "youtube:videoId",
+      "@type": "@id"
+    },
+    "channelId": {
+      "@id": "youtube:channelId",
+      "@type": "@id"
+    },
+    "playlistId": {
+      "@id": "youtube:playlistId",
+      "@type": "@id"
+    },
+    "title": "schema:name",
+    "description": "schema:description",
+    "publishedAt": {
+      "@id": "schema:datePublished",
+      "@type": "schema:DateTime"
+    },
+    "thumbnails": "schema:thumbnailUrl",
+    "channelTitle": "schema:author",
+    "tags": "schema:keywords",
+    "categoryId": "schema:genre",
+    "viewCount": "schema:interactionCount",
+    "likeCount": "schema:userInteractionCount",
+    "commentCount": "schema:commentCount",
+    "duration": "schema:duration",
+    "privacyStatus": "schema:accessMode",
+    "embeddable": "schema:isAccessibleForFree"
+  }
+}

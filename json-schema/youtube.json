@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-youtube/refs/heads/main/json-schema/youtube.json",
+  "title": "YouTube Video",
+  "description": "A YouTube video resource as returned by the YouTube Data API v3.",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "const": "youtube#video"
+    },
+    "etag": {
+      "type": "string",
+      "description": "The ETag of the resource."
+    },
+    "id": {
+      "type": "string",
+      "description": "The ID that YouTube uses to uniquely identify the video."
+    },
+    "snippet": {
+      "type": "object",
+      "description": "Basic details about the video, such as its title, description, and category.",
+      "properties": {
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the video was published."
+        },
+        "channelId": {
+          "type": "string",
+          "description": "The ID of the channel the video belongs to."
+        },
+        "title": {
+          "type": "string",
+          "description": "The video's title."
+        },
+        "description": {
+          "type": "string",
+          "description": "The video's description."
+        },
+        "thumbnails": {
+          "type": "object",
+          "description": "A map of thumbnail images associated with the video.",
+          "properties": {
+            "default": {
+              "$ref": "#/$defs/Thumbnail"
+            },
+            "medium": {
+              "$ref": "#/$defs/Thumbnail"
+            },
+            "high": {
+              "$ref": "#/$defs/Thumbnail"
+            }
+          }
+        },
+        "channelTitle": {
+          "type": "string",
+          "description": "The channel title of the channel the video belongs to."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A list of keyword tags associated with the video."
+        },
+        "categoryId": {
+          "type": "string",
+          "description": "The YouTube video category associated with the video."
+        }
+      },
+      "required": ["title"]
+    },
+    "contentDetails": {
+      "type": "object",
+      "description": "Information about the video content.",
+      "properties": {
+        "duration": {
+          "type": "string",
+          "description": "The length of the video in ISO 8601 duration format."
+        },
+        "dimension": {
+          "type": "string",
+          "description": "Indicates whether the video is 2D or 3D."
+        },
+        "definition": {
+          "type": "string",
+          "enum": ["hd", "sd"],
+          "description": "Indicates whether the video is HD or SD."
+        },
+        "caption": {
+          "type": "string",
+          "enum": ["true", "false"],
+          "description": "Indicates whether captions are available."
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "description": "Statistics about the video.",
+      "properties": {
+        "viewCount": {
+          "type": "string",
+          "description": "The number of times the video has been viewed."
+        },
+        "likeCount": {
+          "type": "string",
+          "description": "The number of users who liked the video."
+        },
+        "dislikeCount": {
+          "type": "string",
+          "description": "The number of users who disliked the video."
+        },
+        "commentCount": {
+          "type": "string",
+          "description": "The number of comments for the video."
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "description": "The status of the video.",
+      "properties": {
+        "uploadStatus": {
+          "type": "string",
+          "enum": ["deleted", "failed", "processed", "rejected", "uploaded"]
+        },
+        "privacyStatus": {
+          "type": "string",
+          "enum": ["private", "public", "unlisted"]
+        },
+        "embeddable": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "required": ["kind", "id"],
+  "$defs": {
+    "Thumbnail": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
