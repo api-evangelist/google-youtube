@@ -13,14 +13,14 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Video
-  - YouTube
-  - Streaming
+  - Channels
   - Google
   - Media
   - Playlists
-  - Channels
   - Search
+  - Streaming
+  - Video
+  - YouTube
 apis:
   - name: YouTube Data API v3
     description: >-
