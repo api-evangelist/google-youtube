@@ -37,14 +37,14 @@ apis:
         url: openapi/youtube.yml
       - type: Authentication
         url: https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.google.com/youtube/v3/getting-started
       - type: JSONSchema
         url: json-schema/youtube.json
 common:
   - type: Portal
     url: https://developers.google.com/youtube
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/youtube/v3/getting-started
   - type: Documentation
     url: https://developers.google.com/youtube/v3
@@ -52,15 +52,15 @@ common:
     url: https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps
   - type: Pricing
     url: https://developers.google.com/youtube/v3/guides/quota_and_compliance_audits
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developers.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://developers.google.com/youtube/v3/guides/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/youtube.jsonld
 maintainers:
   - FN: Kin Lane
