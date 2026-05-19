@@ -1,0 +1,504 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: YouTube Data API
+  description: 'YouTube Data API. 9 operations. Lead operation: List activities. Self-contained Naftiko capability covering
+    one Google Youtube business surface.'
+  tags:
+  - Google Youtube
+  - YouTube Data API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_YOUTUBE_API_KEY: GOOGLE_YOUTUBE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: youtube
+    baseUri: https://youtube.googleapis.com/youtube/v3
+    description: YouTube Data API business capability. Self-contained, no shared references.
+    resources:
+    - name: activities
+      path: /activities
+      operations:
+      - name: listactivities
+        method: GET
+        description: List activities
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: channelId
+          in: query
+          type: string
+        - name: mine
+          in: query
+          type: boolean
+    - name: channels
+      path: /channels
+      operations:
+      - name: listchannels
+        method: GET
+        description: List channels
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: id
+          in: query
+          type: string
+        - name: mine
+          in: query
+          type: boolean
+    - name: commentThreads
+      path: /commentThreads
+      operations:
+      - name: listcommentthreads
+        method: GET
+        description: List comment threads
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: videoId
+          in: query
+          type: string
+    - name: playlistItems
+      path: /playlistItems
+      operations:
+      - name: listplaylistitems
+        method: GET
+        description: List playlist items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: playlistId
+          in: query
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+    - name: playlists
+      path: /playlists
+      operations:
+      - name: listplaylists
+        method: GET
+        description: List playlists
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: channelId
+          in: query
+          type: string
+        - name: mine
+          in: query
+          type: boolean
+        - name: maxResults
+          in: query
+          type: integer
+      - name: insertplaylist
+        method: POST
+        description: Create a playlist
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: search
+      path: /search
+      operations:
+      - name: search
+        method: GET
+        description: Search for content
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: q
+          in: query
+          type: string
+          description: The search query term.
+        - name: type
+          in: query
+          type: string
+          description: Restricts a search to a particular type of resource.
+        - name: maxResults
+          in: query
+          type: integer
+    - name: subscriptions
+      path: /subscriptions
+      operations:
+      - name: listsubscriptions
+        method: GET
+        description: List subscriptions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          required: true
+        - name: mine
+          in: query
+          type: boolean
+        - name: channelId
+          in: query
+          type: string
+    - name: videos
+      path: /videos
+      operations:
+      - name: listvideos
+        method: GET
+        description: List videos
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: part
+          in: query
+          type: string
+          description: The part parameter specifies a comma-separated list of one or more video resource properties.
+          required: true
+        - name: id
+          in: query
+          type: string
+          description: The id parameter specifies a comma-separated list of YouTube video IDs.
+        - name: maxResults
+          in: query
+          type: integer
+          description: The maximum number of items to return.
+        - name: pageToken
+          in: query
+          type: string
+          description: Identifies a specific page in the result set.
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_YOUTUBE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: youtube-rest
+    port: 8080
+    description: REST adapter for YouTube Data API. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/activities
+      name: activities
+      description: REST surface for activities.
+      operations:
+      - method: GET
+        name: listactivities
+        description: List activities
+        call: youtube.listactivities
+        with:
+          part: rest.part
+          channelId: rest.channelId
+          mine: rest.mine
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/channels
+      name: channels
+      description: REST surface for channels.
+      operations:
+      - method: GET
+        name: listchannels
+        description: List channels
+        call: youtube.listchannels
+        with:
+          part: rest.part
+          id: rest.id
+          mine: rest.mine
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/commentthreads
+      name: commentthreads
+      description: REST surface for commentThreads.
+      operations:
+      - method: GET
+        name: listcommentthreads
+        description: List comment threads
+        call: youtube.listcommentthreads
+        with:
+          part: rest.part
+          videoId: rest.videoId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/playlistitems
+      name: playlistitems
+      description: REST surface for playlistItems.
+      operations:
+      - method: GET
+        name: listplaylistitems
+        description: List playlist items
+        call: youtube.listplaylistitems
+        with:
+          part: rest.part
+          playlistId: rest.playlistId
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/playlists
+      name: playlists
+      description: REST surface for playlists.
+      operations:
+      - method: GET
+        name: listplaylists
+        description: List playlists
+        call: youtube.listplaylists
+        with:
+          part: rest.part
+          channelId: rest.channelId
+          mine: rest.mine
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: insertplaylist
+        description: Create a playlist
+        call: youtube.insertplaylist
+        with:
+          part: rest.part
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/search
+      name: search
+      description: REST surface for search.
+      operations:
+      - method: GET
+        name: search
+        description: Search for content
+        call: youtube.search
+        with:
+          part: rest.part
+          q: rest.q
+          type: rest.type
+          maxResults: rest.maxResults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions
+      name: subscriptions
+      description: REST surface for subscriptions.
+      operations:
+      - method: GET
+        name: listsubscriptions
+        description: List subscriptions
+        call: youtube.listsubscriptions
+        with:
+          part: rest.part
+          mine: rest.mine
+          channelId: rest.channelId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/videos
+      name: videos
+      description: REST surface for videos.
+      operations:
+      - method: GET
+        name: listvideos
+        description: List videos
+        call: youtube.listvideos
+        with:
+          part: rest.part
+          id: rest.id
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: youtube-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for YouTube Data API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-activities
+      description: List activities
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listactivities
+      with:
+        part: tools.part
+        channelId: tools.channelId
+        mine: tools.mine
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-channels
+      description: List channels
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listchannels
+      with:
+        part: tools.part
+        id: tools.id
+        mine: tools.mine
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-comment-threads
+      description: List comment threads
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listcommentthreads
+      with:
+        part: tools.part
+        videoId: tools.videoId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-playlist-items
+      description: List playlist items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listplaylistitems
+      with:
+        part: tools.part
+        playlistId: tools.playlistId
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-playlists
+      description: List playlists
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listplaylists
+      with:
+        part: tools.part
+        channelId: tools.channelId
+        mine: tools.mine
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-playlist
+      description: Create a playlist
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: youtube.insertplaylist
+      with:
+        part: tools.part
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-content
+      description: Search for content
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.search
+      with:
+        part: tools.part
+        q: tools.q
+        type: tools.type
+        maxResults: tools.maxResults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-subscriptions
+      description: List subscriptions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listsubscriptions
+      with:
+        part: tools.part
+        mine: tools.mine
+        channelId: tools.channelId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-videos
+      description: List videos
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: youtube.listvideos
+      with:
+        part: tools.part
+        id: tools.id
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
