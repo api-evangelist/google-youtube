@@ -1,0 +1,284 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "YouTube Data API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List videos",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/videos",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query",
+            "description": "The part parameter specifies a comma-separated list of one or more video resource properties."
+          },
+          {
+            "name": "id",
+            "value": "",
+            "type": "query",
+            "description": "The id parameter specifies a comma-separated list of YouTube video IDs."
+          },
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query",
+            "description": "The maximum number of items to return."
+          },
+          {
+            "name": "pageToken",
+            "value": "",
+            "type": "query",
+            "description": "Identifies a specific page in the result set."
+          }
+        ]
+      },
+      "docs": "Returns a list of videos that match the API request parameters."
+    },
+    {
+      "info": {
+        "name": "List channels",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/channels",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "mine",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns a collection of zero or more channel resources."
+    },
+    {
+      "info": {
+        "name": "List playlists",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/playlists",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "channelId",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "mine",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns a collection of playlists."
+    },
+    {
+      "info": {
+        "name": "Create a playlist",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://youtube.googleapis.com/youtube/v3/playlists",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Creates a new playlist."
+    },
+    {
+      "info": {
+        "name": "List playlist items",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/playlistItems",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "playlistId",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns a collection of playlist items."
+    },
+    {
+      "info": {
+        "name": "Search for content",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/search",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "q",
+            "value": "",
+            "type": "query",
+            "description": "The search query term."
+          },
+          {
+            "name": "type",
+            "value": "",
+            "type": "query",
+            "description": "Restricts a search to a particular type of resource."
+          },
+          {
+            "name": "maxResults",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns a collection of search results that match the query parameters."
+    },
+    {
+      "info": {
+        "name": "List subscriptions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/subscriptions",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "mine",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "channelId",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns subscription resources."
+    },
+    {
+      "info": {
+        "name": "List comment threads",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/commentThreads",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "videoId",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns a list of comment threads."
+    },
+    {
+      "info": {
+        "name": "List activities",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://youtube.googleapis.com/youtube/v3/activities",
+        "params": [
+          {
+            "name": "part",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "channelId",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "mine",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Returns a list of channel activity events."
+    }
+  ],
+  "bundled": true
+}

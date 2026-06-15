@@ -1,0 +1,1001 @@
+{
+  "item": [
+    {
+      "id": "fd707ddd-6a85-4549-bfad-ffb7bb8be6de",
+      "name": "List videos",
+      "request": {
+        "name": "List videos",
+        "description": {
+          "content": "Returns a list of videos that match the API request parameters.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "videos"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) The part parameter specifies a comma-separated list of one or more video resource properties."
+            },
+            {
+              "disabled": false,
+              "key": "id",
+              "value": "<string>",
+              "description": "The id parameter specifies a comma-separated list of YouTube video IDs."
+            },
+            {
+              "disabled": false,
+              "key": "maxResults",
+              "value": "5",
+              "description": "The maximum number of items to return."
+            },
+            {
+              "disabled": false,
+              "key": "pageToken",
+              "value": "<string>",
+              "description": "Identifies a specific page in the result set."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "016ddd29-4edb-45dd-823d-c4764681037e",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                },
+                {
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"nextPageToken\": \"string\",\n  \"prevPageToken\": \"string\",\n  \"pageInfo\": {\n    \"totalResults\": 838,\n    \"resultsPerPage\": 6674\n  },\n  \"items\": [\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": \"string\",\n      \"snippet\": {\n        \"publishedAt\": \"1987-02-07T23:35:42.458Z\",\n        \"channelId\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"thumbnails\": {},\n        \"channelTitle\": \"string\",\n        \"tags\": [\n          \"string\",\n          \"string\"\n        ],\n        \"categoryId\": \"string\"\n      },\n      \"contentDetails\": {},\n      \"statistics\": {\n        \"viewCount\": \"string\",\n        \"likeCount\": \"string\",\n        \"commentCount\": \"string\"\n      },\n      \"status\": {}\n    },\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": \"string\",\n      \"snippet\": {\n        \"publishedAt\": \"2000-03-08T18:21:09.982Z\",\n        \"channelId\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"thumbnails\": {},\n        \"channelTitle\": \"string\",\n        \"tags\": [\n          \"string\",\n          \"string\"\n        ],\n        \"categoryId\": \"string\"\n      },\n      \"contentDetails\": {},\n      \"statistics\": {\n        \"viewCount\": \"string\",\n        \"likeCount\": \"string\",\n        \"commentCount\": \"string\"\n      },\n      \"status\": {}\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8166882d-4cbc-44a7-acd0-4c607ce8bee1",
+      "name": "List channels",
+      "request": {
+        "name": "List channels",
+        "description": {
+          "content": "Returns a collection of zero or more channel resources.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "channels"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "mine",
+              "value": "<boolean>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f3cd20b4-658e-47dd-a14b-1f44970f8655",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "channels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"items\": [\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": \"string\",\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"publishedAt\": \"1982-08-25T23:35:27.017Z\"\n      },\n      \"statistics\": {\n        \"viewCount\": \"string\",\n        \"subscriberCount\": \"string\",\n        \"videoCount\": \"string\"\n      }\n    },\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": \"string\",\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"publishedAt\": \"1992-09-21T09:29:02.881Z\"\n      },\n      \"statistics\": {\n        \"viewCount\": \"string\",\n        \"subscriberCount\": \"string\",\n        \"videoCount\": \"string\"\n      }\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "692a78e8-1691-4133-9f24-8d28e1bead37",
+      "name": "List playlists",
+      "request": {
+        "name": "List playlists",
+        "description": {
+          "content": "Returns a collection of playlists.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "playlists"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "channelId",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "mine",
+              "value": "<boolean>"
+            },
+            {
+              "disabled": false,
+              "key": "maxResults",
+              "value": "5"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d014919b-c337-4162-9263-5f537861fbc0",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "playlists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "channelId",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"items\": [\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": \"string\",\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"channelId\": \"string\"\n      }\n    },\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": \"string\",\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"channelId\": \"string\"\n      }\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8e9b5497-83ff-430b-8955-5c5f64ab194a",
+      "name": "Create a playlist",
+      "request": {
+        "name": "Create a playlist",
+        "description": {
+          "content": "Creates a new playlist.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "playlists"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"snippet\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"channelId\": \"<string>\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "66feebbd-f1ba-4a96-9a74-2a0d58aab82b",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "playlists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"snippet\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"channelId\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"id\": \"string\",\n  \"snippet\": {\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"channelId\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1f608197-879c-4956-b30a-0eacc43eda82",
+      "name": "List playlist items",
+      "request": {
+        "name": "List playlist items",
+        "description": {
+          "content": "Returns a collection of playlist items.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "playlistItems"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "playlistId",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "maxResults",
+              "value": "5"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5a797d0d-88d6-45ed-9ea3-353409843aec",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "playlistItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "playlistId",
+                  "value": "<string>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "0be2310d-dc72-49ff-9996-2983f73b7082",
+      "name": "Search for content",
+      "request": {
+        "name": "Search for content",
+        "description": {
+          "content": "Returns a collection of search results that match the query parameters.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "search"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>",
+              "description": "The search query term."
+            },
+            {
+              "disabled": false,
+              "key": "type",
+              "value": "<string>",
+              "description": "Restricts a search to a particular type of resource."
+            },
+            {
+              "disabled": false,
+              "key": "maxResults",
+              "value": "5"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a4e301e8-f60b-4a2b-abb3-0c0e521d581a",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"nextPageToken\": \"string\",\n  \"items\": [\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": {\n        \"kind\": \"string\",\n        \"videoId\": \"string\",\n        \"channelId\": \"string\",\n        \"playlistId\": \"string\"\n      },\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"publishedAt\": \"1990-11-16T12:18:13.284Z\",\n        \"channelTitle\": \"string\"\n      }\n    },\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": {\n        \"kind\": \"string\",\n        \"videoId\": \"string\",\n        \"channelId\": \"string\",\n        \"playlistId\": \"string\"\n      },\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"publishedAt\": \"1947-11-29T10:23:28.349Z\",\n        \"channelTitle\": \"string\"\n      }\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d9ad2505-3da3-4efd-9e8a-25e4e3ccc93d",
+      "name": "List subscriptions",
+      "request": {
+        "name": "List subscriptions",
+        "description": {
+          "content": "Returns subscription resources.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "subscriptions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "mine",
+              "value": "<boolean>"
+            },
+            {
+              "disabled": false,
+              "key": "channelId",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "71657590-890f-4c36-a1ee-dcda2cfe778e",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "channelId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "507ffb0b-01bf-4cf3-ba58-7be76a4efba5",
+      "name": "List comment threads",
+      "request": {
+        "name": "List comment threads",
+        "description": {
+          "content": "Returns a list of comment threads.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "commentThreads"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "videoId",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "11d31d41-4507-4418-a52d-96ae64735b62",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "commentThreads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "videoId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7c469f84-76ae-46f4-92b9-fef6b4262d06",
+      "name": "List activities",
+      "request": {
+        "name": "List activities",
+        "description": {
+          "content": "Returns a list of channel activity events.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "activities"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "part",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "channelId",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "mine",
+              "value": "<boolean>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "37731a2b-26dd-4d86-a470-adba5d3b674c",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "activities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "channelId",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://youtube.googleapis.com/youtube/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aa3634b1-e33c-44ff-8860-c6141615dc56",
+    "name": "YouTube Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}
