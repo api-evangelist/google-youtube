@@ -4,7 +4,7 @@ description: >-
   The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to
   fetch search results, manage videos, playlists, channels, subscriptions, and access activity data. It supports reading
   and writing YouTube data using RESTful operations with OAuth 2.0 authentication.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-youtube/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
