@@ -39,6 +39,8 @@ apis:
       - type: JSONSchema
         url: json-schema/youtube.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-youtube-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/youtube
   - type: LinkedIn
@@ -63,6 +65,8 @@ common:
     url: https://developers.google.com/youtube/v3/guides/support
   - type: JSONLD
     url: json-ld/youtube.jsonld
+  - url: https://blog.youtube/rss/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

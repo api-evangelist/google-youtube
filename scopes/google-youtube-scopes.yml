@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/youtube.yml
+schemes:
+- name: oauth2
+  source: openapi/youtube.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+    tokenUrl: https://oauth2.googleapis.com/token
+scopes:
+- scope: https://www.googleapis.com/auth/youtube
+  description: Manage your YouTube account
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/youtube.yml
+- scope: https://www.googleapis.com/auth/youtube.readonly
+  description: View your YouTube account
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/youtube.yml
+- scope: https://www.googleapis.com/auth/youtube.upload
+  description: Upload YouTube videos
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/youtube.yml
