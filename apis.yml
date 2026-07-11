@@ -39,6 +39,12 @@ apis:
       - type: JSONSchema
         url: json-schema/youtube.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-youtube-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-youtube-domain-security.yml
+  - type: Authentication
+    url: authentication/google-youtube-authentication.yml
   - type: OAuthScopes
     url: scopes/google-youtube-scopes.yml
   - type: GitHubOrganization
