@@ -39,6 +39,8 @@ apis:
       - type: JSONSchema
         url: json-schema/youtube.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-youtube-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-youtube-vulnerability-disclosure.yml
   - type: DomainSecurity
