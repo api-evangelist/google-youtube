@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: YouTube Data Activities Search API
+  description: The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/youtube/v3
+servers:
+- url: https://youtube.googleapis.com/youtube/v3
+security:
+- oauth2: []
+- apiKey: []
+tags:
+- name: Search
+paths:
+  /search:
+    get:
+      operationId: search
+      summary: Search for content
+      description: Returns a collection of search results that match the query parameters.
+      parameters:
+      - name: part
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: q
+        in: query
+        schema:
+          type: string
+        description: The search query term.
+      - name: type
+        in: query
+        schema:
+          type: string
+        description: Restricts a search to a particular type of resource.
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+          default: 5
+          maximum: 50
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchListResponse'
+      tags:
+      - Search
+components:
+  schemas:
+    SearchResult:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: object
+          properties:
+            kind:
+              type: string
+            videoId:
+              type: string
+            channelId:
+              type: string
+            playlistId:
+              type: string
+        snippet:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            publishedAt:
+              type: string
+              format: date-time
+            channelTitle:
+              type: string
+    SearchListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResult'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/youtube: Manage your YouTube account
+            https://www.googleapis.com/auth/youtube.readonly: View your YouTube account
+            https://www.googleapis.com/auth/youtube.upload: Upload YouTube videos
+    apiKey:
+      type: apiKey
+      in: query
+      name: key

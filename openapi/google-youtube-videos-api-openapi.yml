@@ -1,0 +1,139 @@
+openapi: 3.1.0
+info:
+  title: YouTube Data Activities Videos API
+  description: The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/youtube/v3
+servers:
+- url: https://youtube.googleapis.com/youtube/v3
+security:
+- oauth2: []
+- apiKey: []
+tags:
+- name: Videos
+paths:
+  /videos:
+    get:
+      operationId: listVideos
+      summary: List videos
+      description: Returns a list of videos that match the API request parameters.
+      parameters:
+      - name: part
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The part parameter specifies a comma-separated list of one or more video resource properties.
+      - name: id
+        in: query
+        schema:
+          type: string
+        description: The id parameter specifies a comma-separated list of YouTube video IDs.
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+          default: 5
+          maximum: 50
+        description: The maximum number of items to return.
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+        description: Identifies a specific page in the result set.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoListResponse'
+      tags:
+      - Videos
+components:
+  schemas:
+    VideoSnippet:
+      type: object
+      properties:
+        publishedAt:
+          type: string
+          format: date-time
+        channelId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        thumbnails:
+          type: object
+        channelTitle:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        categoryId:
+          type: string
+    VideoListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        prevPageToken:
+          type: string
+        pageInfo:
+          type: object
+          properties:
+            totalResults:
+              type: integer
+            resultsPerPage:
+              type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Video'
+    Video:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        snippet:
+          $ref: '#/components/schemas/VideoSnippet'
+        contentDetails:
+          type: object
+        statistics:
+          type: object
+          properties:
+            viewCount:
+              type: string
+            likeCount:
+              type: string
+            commentCount:
+              type: string
+        status:
+          type: object
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/youtube: Manage your YouTube account
+            https://www.googleapis.com/auth/youtube.readonly: View your YouTube account
+            https://www.googleapis.com/auth/youtube.upload: Upload YouTube videos
+    apiKey:
+      type: apiKey
+      in: query
+      name: key
