@@ -1,0 +1,171 @@
+{
+  "info": {
+    "_postman_id": "e13c1bae-b0bb-492b-be2e-0a1fd216b7db",
+    "name": "YouTube Data Activities Videos API",
+    "description": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:51:04.000Z",
+    "updatedAt": "2026-07-28T01:51:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e13c1bae-b0bb-492b-be2e-0a1fd216b7db"
+  },
+  "item": [
+    {
+      "name": "videos",
+      "item": [
+        {
+          "name": "List videos",
+          "id": "4669c932-0917-4fc0-a58c-f94a2704e9ef",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/videos?part=<string>&id=<string>&maxResults=5&pageToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "videos"
+              ],
+              "query": [
+                {
+                  "description": "(Required) The part parameter specifies a comma-separated list of one or more video resource properties.",
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The id parameter specifies a comma-separated list of YouTube video IDs.",
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of items to return.",
+                  "key": "maxResults",
+                  "value": "5"
+                },
+                {
+                  "description": "Identifies a specific page in the result set.",
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns a list of videos that match the API request parameters."
+          },
+          "response": [
+            {
+              "id": "62ef2380-67eb-45b2-aaa6-ff579fde6463",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/videos?part=<string>&id=<string>&maxResults=5&pageToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "videos"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The part parameter specifies a comma-separated list of one or more video resource properties.",
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The id parameter specifies a comma-separated list of YouTube video IDs.",
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of items to return.",
+                      "key": "maxResults",
+                      "value": "5"
+                    },
+                    {
+                      "description": "Identifies a specific page in the result set.",
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"prevPageToken\": \"<string>\",\n  \"pageInfo\": {\n    \"totalResults\": \"<integer>\",\n    \"resultsPerPage\": \"<integer>\"\n  },\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"snippet\": {\n        \"publishedAt\": \"<dateTime>\",\n        \"channelId\": \"<string>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"thumbnails\": {},\n        \"channelTitle\": \"<string>\",\n        \"tags\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"categoryId\": \"<string>\"\n      },\n      \"contentDetails\": {},\n      \"statistics\": {\n        \"viewCount\": \"<string>\",\n        \"likeCount\": \"<string>\",\n        \"commentCount\": \"<string>\"\n      },\n      \"status\": {}\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"snippet\": {\n        \"publishedAt\": \"<dateTime>\",\n        \"channelId\": \"<string>\",\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"thumbnails\": {},\n        \"channelTitle\": \"<string>\",\n        \"tags\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"categoryId\": \"<string>\"\n      },\n      \"contentDetails\": {},\n      \"statistics\": {\n        \"viewCount\": \"<string>\",\n        \"likeCount\": \"<string>\",\n        \"commentCount\": \"<string>\"\n      },\n      \"status\": {}\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T01:51:05.000Z",
+              "updatedAt": "2026-07-28T01:51:05.000Z",
+              "uid": "35240-62ef2380-67eb-45b2-aaa6-ff579fde6463"
+            }
+          ],
+          "createdAt": "2026-07-28T01:51:05.000Z",
+          "updatedAt": "2026-07-28T01:51:05.000Z",
+          "uid": "35240-4669c932-0917-4fc0-a58c-f94a2704e9ef"
+        }
+      ],
+      "id": "d9c52b53-f363-476b-a035-b7d90ef1e0ba",
+      "createdAt": "2026-07-28T01:51:05.000Z",
+      "updatedAt": "2026-07-28T01:51:05.000Z",
+      "uid": "35240-d9c52b53-f363-476b-a035-b7d90ef1e0ba"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://youtube.googleapis.com/youtube/v3"
+    }
+  ]
+}

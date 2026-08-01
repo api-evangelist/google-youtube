@@ -1,0 +1,143 @@
+{
+  "info": {
+    "_postman_id": "b2a48c27-1ea3-4230-9fd5-1083cfc49e8a",
+    "name": "YouTube Data Activities Subscriptions API",
+    "description": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:51:02.000Z",
+    "updatedAt": "2026-07-28T01:51:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b2a48c27-1ea3-4230-9fd5-1083cfc49e8a"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "List subscriptions",
+          "id": "621255ad-533a-47f4-b104-d7b201ca1932",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/subscriptions?part=<string>&mine=<boolean>&channelId=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "subscriptions"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "channelId",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns subscription resources."
+          },
+          "response": [
+            {
+              "id": "03be23d1-06c0-4f9d-a3bb-e4f46e0ddebd",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/subscriptions?part=<string>&mine=<boolean>&channelId=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mine",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "channelId",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:51:03.000Z",
+              "updatedAt": "2026-07-28T01:51:03.000Z",
+              "uid": "35240-03be23d1-06c0-4f9d-a3bb-e4f46e0ddebd"
+            }
+          ],
+          "createdAt": "2026-07-28T01:51:03.000Z",
+          "updatedAt": "2026-07-28T01:51:03.000Z",
+          "uid": "35240-621255ad-533a-47f4-b104-d7b201ca1932"
+        }
+      ],
+      "id": "19e998ab-f00b-4b60-a5b4-178c40b9e330",
+      "createdAt": "2026-07-28T01:51:02.000Z",
+      "updatedAt": "2026-07-28T01:51:02.000Z",
+      "uid": "35240-19e998ab-f00b-4b60-a5b4-178c40b9e330"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://youtube.googleapis.com/youtube/v3"
+    }
+  ]
+}

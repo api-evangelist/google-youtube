@@ -1,0 +1,157 @@
+{
+  "info": {
+    "_postman_id": "041f4487-9d96-4331-b857-8021626203ae",
+    "name": "YouTube Data Activities Channels API",
+    "description": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:50:33.000Z",
+    "updatedAt": "2026-07-28T01:50:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-041f4487-9d96-4331-b857-8021626203ae"
+  },
+  "item": [
+    {
+      "name": "channels",
+      "item": [
+        {
+          "name": "List channels",
+          "id": "a5584a02-9f21-4f03-8766-a8cf750dd11f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/channels?part=<string>&id=<string>&mine=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "Returns a collection of zero or more channel resources."
+          },
+          "response": [
+            {
+              "id": "9195168c-53fc-45a2-851f-22eb30e310ec",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/channels?part=<string>&id=<string>&mine=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "channels"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mine",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"snippet\": {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"publishedAt\": \"<dateTime>\"\n      },\n      \"statistics\": {\n        \"viewCount\": \"<string>\",\n        \"subscriberCount\": \"<string>\",\n        \"videoCount\": \"<string>\"\n      }\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"snippet\": {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"publishedAt\": \"<dateTime>\"\n      },\n      \"statistics\": {\n        \"viewCount\": \"<string>\",\n        \"subscriberCount\": \"<string>\",\n        \"videoCount\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T01:50:34.000Z",
+              "updatedAt": "2026-07-28T01:50:34.000Z",
+              "uid": "35240-9195168c-53fc-45a2-851f-22eb30e310ec"
+            }
+          ],
+          "createdAt": "2026-07-28T01:50:34.000Z",
+          "updatedAt": "2026-07-28T01:50:34.000Z",
+          "uid": "35240-a5584a02-9f21-4f03-8766-a8cf750dd11f"
+        }
+      ],
+      "id": "f2ad64d9-f48c-4de0-ae57-01075c8e317e",
+      "createdAt": "2026-07-28T01:50:34.000Z",
+      "updatedAt": "2026-07-28T01:50:34.000Z",
+      "uid": "35240-f2ad64d9-f48c-4de0-ae57-01075c8e317e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://youtube.googleapis.com/youtube/v3"
+    }
+  ]
+}

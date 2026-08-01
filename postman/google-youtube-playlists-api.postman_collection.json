@@ -1,0 +1,280 @@
+{
+  "info": {
+    "_postman_id": "7be0d843-101f-4273-a88a-c076ddaa98cc",
+    "name": "YouTube Data Activities Playlists API",
+    "description": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:50:36.000Z",
+    "updatedAt": "2026-07-28T01:50:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7be0d843-101f-4273-a88a-c076ddaa98cc"
+  },
+  "item": [
+    {
+      "name": "playlists",
+      "item": [
+        {
+          "name": "List playlists",
+          "id": "38ef5dd8-166a-4fcf-9dfb-a1c76ee520e3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/playlists?part=<string>&channelId=<string>&mine=<boolean>&maxResults=5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "playlists"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "key": "channelId",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mine",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ]
+            },
+            "description": "Returns a collection of playlists."
+          },
+          "response": [
+            {
+              "id": "dfad066d-587b-46f3-bd33-35d5995bef36",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/playlists?part=<string>&channelId=<string>&mine=<boolean>&maxResults=5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "playlists"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "channelId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mine",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"snippet\": {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"channelId\": \"<string>\"\n      }\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"snippet\": {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"channelId\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T01:50:36.000Z",
+              "updatedAt": "2026-07-28T01:50:36.000Z",
+              "uid": "35240-dfad066d-587b-46f3-bd33-35d5995bef36"
+            }
+          ],
+          "createdAt": "2026-07-28T01:50:36.000Z",
+          "updatedAt": "2026-07-28T01:50:36.000Z",
+          "uid": "35240-38ef5dd8-166a-4fcf-9dfb-a1c76ee520e3"
+        },
+        {
+          "name": "Create a playlist",
+          "id": "d164b6a1-cd39-46b6-9e86-b2182e45d312",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"snippet\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"channelId\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/playlists?part=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "playlists"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "part",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Creates a new playlist."
+          },
+          "response": [
+            {
+              "id": "5f255e71-cb62-4c1f-80a5-81583b2f933e",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"snippet\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"channelId\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/playlists?part=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "playlists"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "part",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"snippet\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"channelId\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T01:50:36.000Z",
+              "updatedAt": "2026-07-28T01:50:36.000Z",
+              "uid": "35240-5f255e71-cb62-4c1f-80a5-81583b2f933e"
+            }
+          ],
+          "createdAt": "2026-07-28T01:50:36.000Z",
+          "updatedAt": "2026-07-28T01:50:36.000Z",
+          "uid": "35240-d164b6a1-cd39-46b6-9e86-b2182e45d312"
+        }
+      ],
+      "id": "b407407a-239d-485c-bf49-9e35a655cb74",
+      "createdAt": "2026-07-28T01:50:36.000Z",
+      "updatedAt": "2026-07-28T01:50:36.000Z",
+      "uid": "35240-b407407a-239d-485c-bf49-9e35a655cb74"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://youtube.googleapis.com/youtube/v3"
+    }
+  ]
+}

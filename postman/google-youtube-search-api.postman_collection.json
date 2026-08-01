@@ -1,0 +1,169 @@
+{
+  "info": {
+    "_postman_id": "9f2a54d4-f15b-4f3d-afb1-7b57ac483a79",
+    "name": "YouTube Data Activities Search API",
+    "description": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:51:01.000Z",
+    "updatedAt": "2026-07-28T01:51:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9f2a54d4-f15b-4f3d-afb1-7b57ac483a79"
+  },
+  "item": [
+    {
+      "name": "search",
+      "item": [
+        {
+          "name": "Search for content",
+          "id": "b6f9eb24-85b1-41fd-94d1-df7ae186203e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/search?part=<string>&q=<string>&type=<string>&maxResults=5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The search query term.",
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Restricts a search to a particular type of resource.",
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ]
+            },
+            "description": "Returns a collection of search results that match the query parameters."
+          },
+          "response": [
+            {
+              "id": "1a425493-b6e0-4183-9039-a5b7c183d692",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/search?part=<string>&q=<string>&type=<string>&maxResults=5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The search query term.",
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Restricts a search to a particular type of resource.",
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": {\n        \"kind\": \"<string>\",\n        \"videoId\": \"<string>\",\n        \"channelId\": \"<string>\",\n        \"playlistId\": \"<string>\"\n      },\n      \"snippet\": {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"publishedAt\": \"<dateTime>\",\n        \"channelTitle\": \"<string>\"\n      }\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": {\n        \"kind\": \"<string>\",\n        \"videoId\": \"<string>\",\n        \"channelId\": \"<string>\",\n        \"playlistId\": \"<string>\"\n      },\n      \"snippet\": {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"publishedAt\": \"<dateTime>\",\n        \"channelTitle\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T01:51:02.000Z",
+              "updatedAt": "2026-07-28T01:51:02.000Z",
+              "uid": "35240-1a425493-b6e0-4183-9039-a5b7c183d692"
+            }
+          ],
+          "createdAt": "2026-07-28T01:51:02.000Z",
+          "updatedAt": "2026-07-28T01:51:02.000Z",
+          "uid": "35240-b6f9eb24-85b1-41fd-94d1-df7ae186203e"
+        }
+      ],
+      "id": "fafac0eb-94ad-49d7-89f2-1de8df972688",
+      "createdAt": "2026-07-28T01:51:02.000Z",
+      "updatedAt": "2026-07-28T01:51:02.000Z",
+      "uid": "35240-fafac0eb-94ad-49d7-89f2-1de8df972688"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://youtube.googleapis.com/youtube/v3"
+    }
+  ]
+}

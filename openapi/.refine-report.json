@@ -1,0 +1,28 @@
+{
+  "provider": "google-youtube",
+  "sources": [
+    "google-youtube-activities-api-openapi.yml",
+    "google-youtube-channels-api-openapi.yml",
+    "google-youtube-commentthreads-api-openapi.yml",
+    "google-youtube-playlistitems-api-openapi.yml",
+    "google-youtube-playlists-api-openapi.yml",
+    "google-youtube-search-api-openapi.yml",
+    "google-youtube-subscriptions-api-openapi.yml",
+    "google-youtube-videos-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-youtube-activities-api-openapi.yml",
+    "google-youtube-channels-api-openapi.yml",
+    "google-youtube-commentthreads-api-openapi.yml",
+    "google-youtube-playlistitems-api-openapi.yml",
+    "google-youtube-playlists-api-openapi.yml",
+    "google-youtube-search-api-openapi.yml",
+    "google-youtube-subscriptions-api-openapi.yml",
+    "google-youtube-videos-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

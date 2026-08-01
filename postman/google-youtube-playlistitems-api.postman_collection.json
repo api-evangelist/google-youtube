@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "0a3a9263-621e-478f-adbc-0daca182d3ab",
+    "name": "YouTube Data Activities PlaylistItems API",
+    "description": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:50:35.000Z",
+    "updatedAt": "2026-07-28T01:50:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0a3a9263-621e-478f-adbc-0daca182d3ab"
+  },
+  "item": [
+    {
+      "name": "playlistItems",
+      "item": [
+        {
+          "name": "List playlist items",
+          "id": "99c92a96-6aab-4178-982d-5a4d6e47f464",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/playlistItems?part=<string>&playlistId=<string>&maxResults=5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "playlistItems"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "part",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "playlistId",
+                  "value": "<string>"
+                },
+                {
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ]
+            },
+            "description": "Returns a collection of playlist items."
+          },
+          "response": [
+            {
+              "id": "57f989a3-cf3e-4be4-b542-3f8e3c704a43",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/playlistItems?part=<string>&playlistId=<string>&maxResults=5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "playlistItems"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "playlistId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:50:35.000Z",
+              "updatedAt": "2026-07-28T01:50:35.000Z",
+              "uid": "35240-57f989a3-cf3e-4be4-b542-3f8e3c704a43"
+            }
+          ],
+          "createdAt": "2026-07-28T01:50:35.000Z",
+          "updatedAt": "2026-07-28T01:50:35.000Z",
+          "uid": "35240-99c92a96-6aab-4178-982d-5a4d6e47f464"
+        }
+      ],
+      "id": "5ccf756c-05ae-4eb7-9aa7-41b0d6f94a3c",
+      "createdAt": "2026-07-28T01:50:35.000Z",
+      "updatedAt": "2026-07-28T01:50:35.000Z",
+      "uid": "35240-5ccf756c-05ae-4eb7-9aa7-41b0d6f94a3c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://youtube.googleapis.com/youtube/v3"
+    }
+  ]
+}
