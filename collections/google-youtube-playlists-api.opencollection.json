@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "YouTube Data Activities Playlists API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Playlists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List playlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://youtube.googleapis.com/youtube/v3/playlists",
+            "params": [
+              {
+                "name": "part",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "channelId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mine",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a collection of playlists."
+        },
+        {
+          "info": {
+            "name": "Create a playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://youtube.googleapis.com/youtube/v3/playlists",
+            "params": [
+              {
+                "name": "part",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new playlist."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

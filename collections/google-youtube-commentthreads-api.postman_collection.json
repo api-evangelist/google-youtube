@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "931e1d6c-2d97-4466-b390-0809f781387f",
+      "name": "CommentThreads",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee3df9d2-2cfb-4e32-bb8b-a46c5fef7fd8",
+          "name": "List comment threads",
+          "request": {
+            "name": "List comment threads",
+            "description": {
+              "content": "Returns a list of comment threads.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "commentThreads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "part",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "videoId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cb6a7c4-8cf8-4369-952b-acce92d18840",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "commentThreads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "videoId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://youtube.googleapis.com/youtube/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fdfee021-039d-4cbf-9aaa-d3a7e891dc8f",
+    "name": "YouTube Data Activities CommentThreads API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

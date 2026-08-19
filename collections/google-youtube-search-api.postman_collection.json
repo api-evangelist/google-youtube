@@ -1,0 +1,172 @@
+{
+  "item": [
+    {
+      "id": "7454688a-5d2f-4b93-b22e-d2d1206bea46",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75b2f169-5ae7-4082-99bd-d2e892935613",
+          "name": "Search for content",
+          "request": {
+            "name": "Search for content",
+            "description": {
+              "content": "Returns a collection of search results that match the query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "part",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "The search query term."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Restricts a search to a particular type of resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "5"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71774d62-9aa9-4563-8ecf-52eb0e1c3ede",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "part",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "5"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"etag\": \"string\",\n  \"nextPageToken\": \"string\",\n  \"items\": [\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": {\n        \"kind\": \"string\",\n        \"videoId\": \"string\",\n        \"channelId\": \"string\",\n        \"playlistId\": \"string\"\n      },\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"publishedAt\": \"1998-08-31T04:22:26.694Z\",\n        \"channelTitle\": \"string\"\n      }\n    },\n    {\n      \"kind\": \"string\",\n      \"etag\": \"string\",\n      \"id\": {\n        \"kind\": \"string\",\n        \"videoId\": \"string\",\n        \"channelId\": \"string\",\n        \"playlistId\": \"string\"\n      },\n      \"snippet\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"publishedAt\": \"1989-03-28T03:22:05.682Z\",\n        \"channelTitle\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://youtube.googleapis.com/youtube/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "04583a3f-d40a-4b59-a942-849f1a97926d",
+    "name": "YouTube Data Activities Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

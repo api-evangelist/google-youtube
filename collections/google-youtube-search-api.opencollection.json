@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "YouTube Data Activities Search API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for content",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://youtube.googleapis.com/youtube/v3/search",
+            "params": [
+              {
+                "name": "part",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "The search query term."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Restricts a search to a particular type of resource."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a collection of search results that match the query parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
