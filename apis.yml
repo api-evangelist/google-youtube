@@ -81,42 +81,6 @@ apis:
     url: https://developers.google.com/youtube/v3/getting-started
   - type: JSONSchema
     url: json-schema/youtube.json
-- aid: google-youtube:google-youtube-commentthreads-api
-  name: YouTube Data CommentThreads API
-  description: The CommentThreads API from YouTube Data — 1 operation(s) for commentthreads.
-  humanURL: https://developers.google.com/youtube/v3
-  baseURL: https://youtube.googleapis.com/youtube/v3
-  tags:
-  - CommentThreads
-  properties:
-  - type: OpenAPI
-    url: openapi/google-youtube-commentthreads-api-openapi.yml
-  - type: Documentation
-    url: https://developers.google.com/youtube/v3/docs
-  - type: Authentication
-    url: https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps
-  - type: GettingStarted
-    url: https://developers.google.com/youtube/v3/getting-started
-  - type: JSONSchema
-    url: json-schema/youtube.json
-- aid: google-youtube:google-youtube-playlistitems-api
-  name: YouTube Data PlaylistItems API
-  description: The PlaylistItems API from YouTube Data — 1 operation(s) for playlistitems.
-  humanURL: https://developers.google.com/youtube/v3
-  baseURL: https://youtube.googleapis.com/youtube/v3
-  tags:
-  - PlaylistItems
-  properties:
-  - type: OpenAPI
-    url: openapi/google-youtube-playlistitems-api-openapi.yml
-  - type: Documentation
-    url: https://developers.google.com/youtube/v3/docs
-  - type: Authentication
-    url: https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps
-  - type: GettingStarted
-    url: https://developers.google.com/youtube/v3/getting-started
-  - type: JSONSchema
-    url: json-schema/youtube.json
 - aid: google-youtube:google-youtube-playlists-api
   name: YouTube Data Playlists API
   description: The Playlists API from YouTube Data — 1 operation(s) for playlists.
@@ -183,6 +147,42 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/google-youtube-videos-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/youtube/v3/docs
+  - type: Authentication
+    url: https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps
+  - type: GettingStarted
+    url: https://developers.google.com/youtube/v3/getting-started
+  - type: JSONSchema
+    url: json-schema/youtube.json
+- aid: google-youtube:google-youtube-comment-threads-api
+  name: YouTube Data Comment Threads API
+  description: The Comment Threads API from YouTube Data — 1 operation(s) for comment threads.
+  humanURL: https://developers.google.com/youtube/v3
+  baseURL: https://youtube.googleapis.com/youtube/v3
+  tags:
+  - Comment Threads
+  properties:
+  - type: OpenAPI
+    url: openapi/google-youtube-comment-threads-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/youtube/v3/docs
+  - type: Authentication
+    url: https://developers.google.com/youtube/v3/guides/auth/client-side-web-apps
+  - type: GettingStarted
+    url: https://developers.google.com/youtube/v3/getting-started
+  - type: JSONSchema
+    url: json-schema/youtube.json
+- aid: google-youtube:google-youtube-playlist-items-api
+  name: YouTube Data Playlist Items API
+  description: The Playlist Items API from YouTube Data — 1 operation(s) for playlist items.
+  humanURL: https://developers.google.com/youtube/v3
+  baseURL: https://youtube.googleapis.com/youtube/v3
+  tags:
+  - Playlist Items
+  properties:
+  - type: OpenAPI
+    url: openapi/google-youtube-playlist-items-api-openapi.yml
   - type: Documentation
     url: https://developers.google.com/youtube/v3/docs
   - type: Authentication
