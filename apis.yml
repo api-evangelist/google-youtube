@@ -143,6 +143,8 @@ apis:
   humanURL: https://developers.google.com/youtube/v3
   baseURL: https://youtube.googleapis.com/youtube/v3
   tags:
+  - Video
+  tags_raw:
   - Videos
   properties:
   - type: OpenAPI
@@ -161,6 +163,8 @@ apis:
   humanURL: https://developers.google.com/youtube/v3
   baseURL: https://youtube.googleapis.com/youtube/v3
   tags:
+  - CommentThreads
+  tags_raw:
   - Comment Threads
   properties:
   - type: OpenAPI
@@ -179,6 +183,8 @@ apis:
   humanURL: https://developers.google.com/youtube/v3
   baseURL: https://youtube.googleapis.com/youtube/v3
   tags:
+  - PlaylistItems
+  tags_raw:
   - Playlist Items
   properties:
   - type: OpenAPI
