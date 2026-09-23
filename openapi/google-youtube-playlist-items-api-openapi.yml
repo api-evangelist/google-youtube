@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: YouTube Data Activities Comment Threads API
+  title: YouTube Data Playlist Items API
   description: The YouTube Data API v3 lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results, retrieve and manage video resources, manage channels and playlists, and access subscription and activity data.
   version: v3
   contact:
@@ -12,28 +12,35 @@ security:
 - oauth2: []
 - apiKey: []
 tags:
-- name: CommentThreads
+- name: Playlist Items
 paths:
-  /commentThreads:
+  /playlistItems:
     get:
-      operationId: listCommentThreads
-      summary: List comment threads
-      description: Returns a list of comment threads.
+      operationId: listPlaylistItems
+      summary: List playlist items
+      description: Returns a collection of playlist items.
       parameters:
       - name: part
         in: query
         required: true
         schema:
           type: string
-      - name: videoId
+      - name: playlistId
         in: query
+        required: true
         schema:
           type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+          default: 5
+          maximum: 50
       responses:
         '200':
           description: Successful response
       tags:
-      - CommentThreads
+      - Playlist Items
 components:
   securitySchemes:
     oauth2:

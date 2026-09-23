@@ -1,14 +1,7 @@
 {
   "provider": "google-youtube",
   "sources": [
-    "google-youtube-activities-api-openapi.yml",
-    "google-youtube-channels-api-openapi.yml",
-    "google-youtube-commentthreads-api-openapi.yml",
-    "google-youtube-playlistitems-api-openapi.yml",
-    "google-youtube-playlists-api-openapi.yml",
-    "google-youtube-search-api-openapi.yml",
-    "google-youtube-subscriptions-api-openapi.yml",
-    "google-youtube-videos-api-openapi.yml"
+    "_original/youtube.yml"
   ],
   "outputs": [
     "google-youtube-activities-api-openapi.yml",
@@ -20,19 +13,42 @@
     "google-youtube-subscriptions-api-openapi.yml",
     "google-youtube-videos-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-youtube-activities-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-channels-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-commentthreads-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-playlistitems-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-playlists-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-subscriptions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-youtube-videos-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "youtube.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "youtube.yml: tagged paths GET /videos -> Videos",
+    "youtube.yml: tagged paths GET /channels -> Channels",
+    "youtube.yml: tagged paths GET /playlists -> Playlists",
+    "youtube.yml: tagged paths POST /playlists -> Playlists",
+    "youtube.yml: tagged paths GET /playlistItems -> PlaylistItems",
+    "youtube.yml: tagged paths GET /search -> Search",
+    "youtube.yml: tagged paths GET /subscriptions -> Subscriptions",
+    "youtube.yml: tagged paths GET /commentThreads -> CommentThreads",
+    "youtube.yml: tagged paths GET /activities -> Activities",
+    "youtube.yml: declared missing tag: Activities",
+    "youtube.yml: declared missing tag: Channels",
+    "youtube.yml: declared missing tag: CommentThreads",
+    "youtube.yml: declared missing tag: PlaylistItems",
+    "youtube.yml: declared missing tag: Playlists",
+    "youtube.yml: declared missing tag: Search",
+    "youtube.yml: declared missing tag: Subscriptions",
+    "youtube.yml: declared missing tag: Videos",
+    "superseded outputs removed: google-youtube-comment-threads-api-openapi.yml, google-youtube-playlist-items-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 8 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-youtube-activities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-channels-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-comment-threads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-playlist-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-playlists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-youtube-videos-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
