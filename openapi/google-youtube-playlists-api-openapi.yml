@@ -74,17 +74,6 @@ paths:
       - Playlists
 components:
   schemas:
-    PlaylistListResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Playlist'
     Playlist:
       type: object
       properties:
@@ -103,6 +92,17 @@ components:
               type: string
             channelId:
               type: string
+    PlaylistListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Playlist'
   securitySchemes:
     oauth2:
       type: oauth2

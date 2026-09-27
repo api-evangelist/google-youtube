@@ -44,6 +44,17 @@ paths:
       - Channels
 components:
   schemas:
+    ChannelListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
     Channel:
       type: object
       properties:
@@ -72,17 +83,6 @@ components:
               type: string
             videoCount:
               type: string
-    ChannelListResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Channel'
   securitySchemes:
     oauth2:
       type: oauth2

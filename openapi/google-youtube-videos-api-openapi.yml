@@ -78,28 +78,6 @@ components:
               type: string
         status:
           type: object
-    VideoSnippet:
-      type: object
-      properties:
-        publishedAt:
-          type: string
-          format: date-time
-        channelId:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        thumbnails:
-          type: object
-        channelTitle:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        categoryId:
-          type: string
     VideoListResponse:
       type: object
       properties:
@@ -122,6 +100,28 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Video'
+    VideoSnippet:
+      type: object
+      properties:
+        publishedAt:
+          type: string
+          format: date-time
+        channelId:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        thumbnails:
+          type: object
+        channelTitle:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        categoryId:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

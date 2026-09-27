@@ -52,6 +52,19 @@ paths:
       - Search
 components:
   schemas:
+    SearchListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResult'
     SearchResult:
       type: object
       properties:
@@ -82,19 +95,6 @@ components:
               format: date-time
             channelTitle:
               type: string
-    SearchListResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        nextPageToken:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchResult'
   securitySchemes:
     oauth2:
       type: oauth2
