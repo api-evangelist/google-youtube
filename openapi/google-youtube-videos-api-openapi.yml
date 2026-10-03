@@ -54,30 +54,6 @@ paths:
       - Videos
 components:
   schemas:
-    Video:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        id:
-          type: string
-        snippet:
-          $ref: '#/components/schemas/VideoSnippet'
-        contentDetails:
-          type: object
-        statistics:
-          type: object
-          properties:
-            viewCount:
-              type: string
-            likeCount:
-              type: string
-            commentCount:
-              type: string
-        status:
-          type: object
     VideoListResponse:
       type: object
       properties:
@@ -122,6 +98,30 @@ components:
             type: string
         categoryId:
           type: string
+    Video:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        snippet:
+          $ref: '#/components/schemas/VideoSnippet'
+        contentDetails:
+          type: object
+        statistics:
+          type: object
+          properties:
+            viewCount:
+              type: string
+            likeCount:
+              type: string
+            commentCount:
+              type: string
+        status:
+          type: object
   securitySchemes:
     oauth2:
       type: oauth2
