@@ -54,28 +54,6 @@ paths:
       - Videos
 components:
   schemas:
-    VideoListResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        nextPageToken:
-          type: string
-        prevPageToken:
-          type: string
-        pageInfo:
-          type: object
-          properties:
-            totalResults:
-              type: integer
-            resultsPerPage:
-              type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Video'
     VideoSnippet:
       type: object
       properties:
@@ -122,6 +100,28 @@ components:
               type: string
         status:
           type: object
+    VideoListResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        prevPageToken:
+          type: string
+        pageInfo:
+          type: object
+          properties:
+            totalResults:
+              type: integer
+            resultsPerPage:
+              type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Video'
   securitySchemes:
     oauth2:
       type: oauth2
